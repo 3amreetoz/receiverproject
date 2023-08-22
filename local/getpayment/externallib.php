@@ -28,15 +28,18 @@ class local_getpayment_external extends external_api
                 'phone' => new external_value(PARAM_RAW_TRIMMED, 'Phone'),
                 'country' => new external_value(PARAM_TEXT, 'Country'),
                 'certificatename' => new external_value(PARAM_TEXT, 'Certificate Name'),
+                'courseid' => new external_value(PARAM_TEXT, 'Course Id'),
+                'cost' => new external_value(PARAM_TEXT, 'Cost'),
+                'coursename' => new external_value(PARAM_TEXT, 'course name'),
             )
 
         );
     }
-    public static function save_data( $firstname,  $lastname,  $email,  $phone,  $country,  $certificatename)
+    public static function save_data( $firstname,  $lastname,  $email,  $phone,  $country,  $certificatename, $courseid, $cost, $coursename)
     {
         $params = self::validate_parameters(
             self::save_data_parameters(),
-            array('firstname' => $firstname, 'lastname' => $lastname, 'email' => $email, 'phone' => $phone, 'country' => $country, 'certificatename' => $certificatename)
+            array('firstname' => $firstname, 'lastname' => $lastname, 'email' => $email, 'phone' => $phone, 'country' => $country, 'certificatename' => $certificatename, 'courseid'=>$courseid, 'cost' => $cost, 'coursename'=> $coursename)
         );
 
         // Create the notification using the manager class
@@ -48,7 +51,10 @@ class local_getpayment_external extends external_api
             $params['email'],
             $params['phone'],
             $params['country'],
-            $params['certificatename']
+            $params['certificatename'],
+            $params['courseid'],
+            $params['cost'],
+            $params['coursename']
         );
         if ($result) {
             return array(

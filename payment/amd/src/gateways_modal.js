@@ -58,7 +58,7 @@ const show = async(rootNode, {
 } = {}) => {
     const modal = await ModalFactory.create({
         type: ModalGateways.TYPE,
-        title: await getString('selectpaymenttype', 'core_payment'),
+        title: await getString('test', 'core_payment'),
         body: await Templates.render('core_payment/gateways_modal', {}),
     });
 

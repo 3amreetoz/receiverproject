@@ -5,7 +5,9 @@
         <TABLE NAME="local_getpayment" COMMENT="each record is a local_getpayment">
             <FIELDS>
                 <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
-                <!-- <FIELD NAME="user_name" TYPE="text" NOTNULL="true" SEQUENCE="false"/> -->
+                <FIELD NAME="courseid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+                <FIELD NAME="cost" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
+                <FIELD NAME="coursename" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
                 <FIELD NAME="first_name" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
                 <FIELD NAME="last_name" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
                 <FIELD NAME="email" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
